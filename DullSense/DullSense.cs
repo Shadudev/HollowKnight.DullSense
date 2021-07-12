@@ -2,7 +2,7 @@
 
 namespace DullSenseMod
 {
-    public class DullSense : Mod
+    public class DullSense : Mod, ITogglableMod
     {
         public DullSense Instance { get; private set; }
 
@@ -40,5 +40,10 @@ namespace DullSenseMod
             string ver = "0.0.1";
             return ver;
         }
+
+        public void Unload()
+        {
+			RandomizerMod.GiveItemActions.ExternItemHandlers.Remove(DropWorldSense);
+		}
     }
 }
