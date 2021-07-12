@@ -43,6 +43,7 @@ namespace DullSenseMod
 
         public void Unload()
         {
+			Instance = null;
 			RandomizerMod.GiveItemActions.ExternItemHandlers.Remove(DropWorldSense);
 		}
     }
